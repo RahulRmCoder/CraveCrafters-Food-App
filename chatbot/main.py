@@ -23,7 +23,7 @@ orders_collection = db.orders
 users_collection = db.users
 
 # Load environment variables
-GROQ_API_KEY = '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'
+GROQ_API_KEY = 'Your API Key'
 NODE_SERVER_URL = os.getenv('NODE_SERVER_URL', 'http://localhost:3019')
 
 # Initialize Groq client
