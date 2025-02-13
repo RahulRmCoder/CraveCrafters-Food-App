@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraveCafters - Login</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/Login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        /* Styles for the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #forgot-password-form input,
+        #code-verification input,
+        #new-password input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        #forgot-password-form button,
+        #code-verification button,
+        #new-password button {
+            width: 100%;
+            padding: 10px;
+            background-color: #D04848;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #forgot-password-form button:hover,
+        #code-verification button:hover,
+        #new-password button:hover {
+            background-color: #b03a3a;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="pic">
+        <section id="header">
+            <a href="#"><img src="images/logo1.png" class="logo" alt="" width="150"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a class="active" href="Login1.html">Login</a></li>
+                    <li><a href="About1.html">About</a></li>
+                    <li><a href="contact1.html">Contact</a></li>
+                </ul>
+            </div>
+        </section>
+        <section id="hero">
+            <div class="login-container">
+                <h2>Login to Your Account</h2>
+                <form class="login-form" action="/login" method="POST" name="form" onsubmit="return validated(event)">
+                    <br>
+                    
+                    <h3>Email ID <span style="color: #D04848;">*</span></h3>
+                    <input type="text" placeholder="e.g. abc@gmail.com" name="email" required>
+                    <div id="email-error">Please fill up your Email or Phone</div>
+
+                    <h3>Password <span style="color: #D04848;">*</span></h3>
+                    <input type="password" placeholder="It should have numbers and special characters" name="password" required>
+                    <div id="pass-error">Please enter a valid and strong password</div>
+                    
+                    <a href="#" id="forgot-password-link" style="text-decoration: none; color: #D04848;">Forgot Password?</a><br><br>
+                    Don't have an account? <a href="Signup1.html" style="text-decoration: none; color: #D04848;">Sign Up</a><br>
+                    <br>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </section>
+    </section>
+    
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Reset Password</h2>
+            <form id="forgot-password-form">
+                <input type="email" id="reset-email" placeholder="Enter your email" required>
+                <button type="submit">Send Reset Code</button>
+            </form>
+            <div id="code-verification" style="display: none;">
+                <input type="text" id="reset-code" placeholder="Enter reset code" required>
+                <button id="verify-code">Verify Code</button>
+            </div>
+            <div id="new-password" style="display: none;">
+                <input type="password" id="new-password-input" placeholder="Enter new password" required>
+                <input type="password" id="confirm-password-input" placeholder="Confirm new password" required>
+                <button id="update-password">Update Password</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/Login.js"></script>
+    <script>
+        // JavaScript to handle the modal
+        var modal = document.getElementById("forgot-password-modal");
+        var btn = document.getElementById("forgot-password-link");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

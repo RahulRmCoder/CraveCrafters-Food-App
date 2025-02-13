@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="shortcut icon" href="/images/logo.png" image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/cart.css">
+</head>
+
+<body>
+    <section id="pic">
+        <section id="header">
+            <a href="#"><img src="/images/logo1.png" class="logo" alt="" width="150"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Orders.html">Menu</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li id="lg-bag"><a href="cart.html" class="active"><i
+                                class="fa-solid fa-bag-shopping"></i></a></li>
+                    <a href="Cart.html" id="close"><i class="fa-solid fa-xmark" style="color: #cb202d;"></i></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html" style="color: #1a1a1a;"><i class="fa-solid fa-bag-shopping"></i></a>
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </section>
+        <section id="cart" class="section-p1">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Food Image</td>
+                        <td>Food Name</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Subtotal</td>
+                    </tr>
+                </thead>
+                <tbody id="cartTableBody">
+                    <!-- Cart items will be loaded here -->
+                </tbody>
+            </table>
+        </section>
+        <section id="cart-add" class="section-p1">
+            <div id ="coupon">
+                <h3>Select Address</h3>
+                <div id="address-options">
+                <!-- Existing Address Field -->
+                <div class="address-option">
+                    <input type="text" id="existingAddress" placeholder="Enter your address" value="Existing Address">
+                    <button class="normal" onclick="selectAddress('existingAddress')">Select</button>
+                </div>
+                <br><br>
+                
+                <!-- New Address Field -->
+                <div class="address-option">
+                    <input type="text" id="newAddress" placeholder="Enter your address" value="New Address">
+                    <button class="normal" onclick="selectAddress('newAddress')">Select</button>
+                </div>
+                <br><br>
+                </div>
+            </div>
+            <div id="subtotal">
+                <h3>Total Amount</h3>
+                <table>
+                    <tr>
+                        <td>
+                            Total Amount
+                        </td>
+                        <td id="totalAmount">
+                            ₹0 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Shipping
+                        </td>
+                        <td>
+                            Free
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                Total
+                            </strong>
+                        </td>
+                        <td id="total">
+                            <strong>₹0</strong>
+                        </td>
+                    </tr>
+                </table>
+                <button class="normal" onclick="handleCheckout()">Proceed to Checkout</button>
+            </div>
+        </section>
+        <footer class="section-p1" style="height: 100vh;">
+            <div class="column">
+                <img class="logo" src="/images/logo1.png" class="" alt="" width="200px">
+                <h4>Contact</h4>
+                <p><strong>Address:</strong> 140 Street, Bandra Chapel,Mumbai,India</p>
+                <p><strong>Phone:</strong> +91 0x0x0x2353</p>
+                <p><strong>Hours:</strong>9:00-20:00,Mon-Sat</p>
+                <div class="follow">
+                    <h4>Follow us</h4>
+                    <div class="icon">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-pinterest-p"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h4>About</h4>
+                <a href="About.html">About us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms and Conditions</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="Login.html">Sign In</a>
+                <a href="Cart.html">View Cart</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+            </div>
+            <div class="col install">
+                <h4>Install App</h4>
+                <p>From App Store or Google Play</p>
+                <div class="row">
+                    <img src="/images/app.jpg" alt="">
+                    <img src="/images/play.jpg" alt="">
+                </div>
+                <p>Secured Payment Gateways</p>
+                <img src="/images/pay.png" alt="">
+                <img src="/images/upi-icon.png" alt="" width="70px">
+            </div>
+            <div class="copyright">
+                <p>©<span id="current-year"></span>, CraveCrafters Limited</p>
+            </div>
+        </footer>
+    <script src="/js/cart.js"></script>
+</body>
+
+</html>

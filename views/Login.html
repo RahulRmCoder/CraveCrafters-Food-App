@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CraveCafters-Login</title>
+        <link rel="shortcut icon" href="images/logo.png"image/x-icon">
+        <link rel="stylesheet" href="css/Login.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    </head>
+
+    <body>
+        <section id="pic">
+            <section id="header">
+              <a href="#"><img src="images/logo1.png" class="logo" alt="" width="150"></a>
+              <div>
+                  <ul id="navbar">
+                      <li><a href="index1.html">Home</a></li>
+                      <li><a class="active" href="Login.html">Login</a></li>
+                      <li><a href="About.html">About</a></li>
+                      <li><a href="contact.html">Contact</a></li>
+                      <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                      <a href="Cart.html" id="close"><i class="fa-solid fa-xmark" style="color: #cb202d;"></i></a>
+                  </ul>
+              </div>
+              <div id="mobile">
+                  
+                  <a href="cart.html" style="color: #1a1a1a;"><i class="fa-solid fa-bag-shopping"></i></a>
+                  <i id="bar" class="fas fa-outdent"></i>
+              </div>
+            </section>
+        <section id="hero">
+            <div class="login-container">
+                <h2>Login to Your Account</h2>
+                <form class="login-form" action="index.html" name="form" onsubmit="return validated(event)">
+
+                    <br>
+                    
+                    <h3>Email and Phone.No</h3>
+                    <input type="text" placeholder="Email or Phone.No" name="email">
+                    
+                    <div id="email-error">Please fill up your Email or Phone</div>
+                    <h3>Password</h3>
+
+                    <input type="password" placeholder="It should have numbers and special charecters " name="password">
+                    <div id="pass-error">Please enter a valid and strong password</div>
+                    <a href="SignUp.html" style="text-decoration: none;color: #D04848;">Sign Up</a><br>
+                    <br>
+                    <button type="submit">login</button>
+                </form>
+            </div>
+        </section>
+        <script src="js/Login.js"></script>
+    </body>
+    </html>
+        

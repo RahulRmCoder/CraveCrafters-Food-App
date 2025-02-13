@@ -1,0 +1,21 @@
+.carousel-item {
+    position: static;
+}
+
+.order-button {
+    position: absolute;
+    bottom: 150px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #cd202d; /* Button color */
+    color: #fff; /* Text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.order-button a {
+    text-decoration: none;
+    color: #fff;
+}

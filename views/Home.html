@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraveCrafters</title>
+    <link rel="shortcut icon" href="images/logo.png" image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <section id="pic"  loading="lazy">
+        <section id="header">
+            <a href="#"><img src="images/logo1.png" class="logo" alt="" width="150"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a class="active" href="Home.html">Home</a></li>
+                    <li><a href="Login1.html">Login</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                    <a href="Cart.html" id="close"><i class="fa-solid fa-xmark" style="color: #cb202d;"></i></a>
+                    
+                </ul>
+            </div>
+            
+            <div id="mobile">
+                <a href="cart.html" style="color: #1a1a1a;"><i class="fa-solid fa-bag-shopping"></i></a>
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+            <div id="profile-dropdown">
+                <button id="profile-button"><img src="/images/profile.jpg" alt="Profile"></button> 
+                <div id="profile-options" class="hidden">
+                    <ul>
+                        <li><a href="profile.html">Edit Profile</a></li>
+                        <li><a href="/logout" id="logout-link">Logout</a></li>
+                        <li><a href="MyOrders.html">Your Orders</a></li>
+                    </ul>
+                </div>
+            </div>
+        
+        </section>
+        <section id="hero">
+            <h4>Discover Authentic Indian Flavors with <span class="one">Crave Crafters</span></h4>
+            <h4><i><b><span class="one">Spice Up Your Day with Crave Crafters!</span></b></i></h4>
+            <h2>Authentic. Delicious. Fast.</h2>
+            <h1>Crave India? We’ve Got It!</h1>
+            <p> <span class="r">Additional Savings with coupons & up to 70% off</span></p>
+            <button><a href="Orders.html" style="text-decoration: none; color: #fff;">Menu</a></button>
+        </section>
+    </section>
+
+    <section id="recommendations" class="section-p1">
+        <h2 style="text-align: center;">Recommended For You</h2>
+        <p style="text-align: center;">Based on Your Preferences and Past Orders.</p>
+        <div class="pro-container" id="recommendations-container"></div>
+    </section>
+    
+    <section id="product1" class="section-p1">
+        <h2>Top Picks of the Month</h2>
+        <p>Dishes That Never Disappoint.</p>
+        <div class="pro-container">
+            <div class="pro" data-dish-name="Chicken Tikka" data-dish-price="350"id="41">
+                <img src="/images/Chicken Tikka.jpg" alt="" height="280px">
+                <div class="des">
+                    <img src="/images/Non-Veg.png" alt="non-veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Chicken Tikka</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹350</h4>
+                </div>
+                <a href="#41" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+            <div class="pro" data-dish-name="Paneer Butter Masala" data-dish-price="280"id="42">
+                <img src="/images/Paneer Butter Masala.avif" alt="" height="280px">
+                <div class="des">
+                    <img src="/images/Veg.png" alt="veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Paneer Butter Masala</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹280</h4>
+                </div>
+                <a href="#42" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+            <div class="pro" data-dish-name="Chicken Lollipop" data-dish-price="345"id="43">
+                <img src="/images/Chicken Lollipop.avif" alt="" height="280px">
+                <div class="des">
+                    <img src="/images/Non-Veg.png" alt="non-veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Chicken Lollipop</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹345</h4>
+                </div>
+                <a href="#43" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+            <div class="pro" data-dish-name="Paneer Tikka" data-dish-price="345"id="44">
+                <img src="/images/Paneer Tikka.avif" alt="" height="280px">
+                <div class="des">
+                    <img src="/images/Veg.png" alt="veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Paneer Tikka</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹345</h4>
+                </div>
+                <a href="#44" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+            <div class="pro" data-dish-name="Honey Chilli Potato" data-dish-price="250"id="45">
+                <img src="/images/Honey Chilli Potato.avif" alt="" height="280px">
+                <div class="des">
+                    <img src="/images/Veg.png" alt="veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Honey Chilli Potato</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹250</h4>
+                </div>
+                <a href="#45" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+            <div class="pro" data-dish-name="Tandoori Chicken" data-dish-price="400"id="46">
+                <img src="/images/Tandoori Chicken.png" alt="Tandoori Chicken" height="280px">
+                <div class="des">
+                    <img src="/images/Non-Veg.png" alt="non-veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Tandoori Chicken</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹400</h4>
+                </div>
+                <a href="#46" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+            <div class="pro" data-dish-name="Paneer Tikka Masala" data-dish-price="300"id="47">
+                <img src="/images/Paneer Tikka Masala.avif" alt="" height="280px">
+                <div class="des">
+                    <img src="/images/Veg.png" alt="non-veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Paneer Tikka Masala</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹300</h4>
+                </div>
+                <a href="#47" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+            <div class="pro" data-dish-name="Chilli Chicken" data-dish-price="280"id="48">
+                <img src="/images/Chilli Chicken.avif" alt="" height="280px">
+                <div class="des">
+                    <img src="/images/Non-Veg.png" alt="non-veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Chilli Chicken</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹280</h4>
+                </div>
+                <a href="#48" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+        </div>
+    </section>
+    <section id="banner" class="section-m1">
+    </section>
+    <section id="product1" class="section-p1">
+        <h2 id="offer-heading">TILL DECEMBER 1ST</h2>
+        <p>Enjoy the South Indian Delicacies</p>
+        <div class="pro-container">
+            <div class="pro" style="height: 50vh;" data-dish-name="Coconut Rice & Okra" data-dish-price="225" id="49">
+                <img src="/images/Coconut Rice & Okra.png" alt="">
+                <div class="des">
+                    <img src="/images/Veg.png" alt="veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Coconut Rice & Okra</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹225</h4>
+                </div>
+                <a href="#49" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+            <div class="pro" style="height: 50vh;" data-dish-name="Appam & Chickpea Curry" data-dish-price="200"id="50">
+                <img src="/images/Appam & Chickpea Curry.png" alt="">
+                <div class="des">
+                    <img src="/images/Veg.png" alt="veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Appam & Chickpea Curry</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹200</h4>
+                </div>
+                <a href="#50" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+            <div class="pro" style="height: 50vh;" data-dish-name="Malabar Fish Fry" data-dish-price="340"id="51">
+                <img src="/images/Malabar Fish Fry.png" alt="">
+                <div class="des">
+                    <img src="/images/Non-Veg.png" alt="veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Malabar Fish Fry</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                    </div>
+                    <h4>₹340</h4>
+                </div>
+                <a href="#51" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+            <div class="pro" style="height: 50vh;" data-dish-name="Prawns Mango Curry" data-dish-price="380"id="52">
+                <img src="/images/Prawns Mango Curry.png" alt="">
+                <div class="des">
+                    <img src="/images/Non-Veg.png" alt="veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Prawns Mango Curry</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                    </div>
+                    <h4>₹380</h4>
+                </div>
+                <a href="#52" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+            <div class="pro" data-dish-name="Puttu & Egg Curry" data-dish-price="180" id="53">
+                <img src="/images/Puttu & Egg Curry.png" alt="">
+                <div class="des">
+                    <img src="/images/Non-Veg.png" alt="veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Puttu & Egg Curry</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                    </div>
+                    <h4>₹180</h4>
+                </div>
+                <a href="#53" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+            <div class="pro" data-dish-name="Hyderabadi Biriyani" data-dish-price="399" id="54">
+                <img src="/images/Hyderabadi Biriyani.png" alt="" height="190px">
+                <div class="des">
+                    <img src="/images/Non-Veg.png" alt="veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Hyderabadi Biriyani</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+
+                    </div>
+                    <h4>₹399</h4>
+
+                </div>
+                <a href="#54" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+            <div class="pro" data-dish-name="Malabar Biriyani" data-dish-price="300" id="55">
+                <img src="/images/Malabar Biriyani (2).png" alt="" height="190px">
+                <div class="des">
+                    <img src="/images/Non-Veg.png" alt="veg" style="width: 20px; border-radius: 0px;">
+                    <h5>Malabar Biriyani</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                    </div>
+                    <h4>₹300</h4>
+                </div>
+                <a href="#55" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+            <div class="pro" data-dish-name="South Indian Meals" data-dish-price="250"id="56">
+                <img src="/images/South Indian Meals.png" alt="">
+                <div class="des">
+                    <img src="/images/Veg.png" alt="veg" style="width: 20px; border-radius: 0px;">
+                    <h5>South Indian Thali</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+
+                    </div>
+                    <h4>₹250</h4>
+                </div>
+                <a href="#56" class="add-to-cart"><i class="fa-solid fa-cart-plus cart"></i></a>
+            </div>
+        </div>
+    </section>
+    <div id="dishDescription" class="hidden">
+        <div class="description-content">
+            <p>Description will be loaded here.</p>
+            <button id="closeDescription">Close</button>
+        </div>
+    </div>
+    <section id="banner3">
+        <div class="banner-box">
+            <h2>Starters</h2>
+            <h3><a href="Orders.html#starters" style="color: #fff; text-decoration: none;">Click Here</a></h3>
+        </div>
+        <div class="banner-box banner-box2">
+            <h2>Main Course</h2>
+            <h3><a href="Orders.html#maincourse" style="color: #fff; text-decoration: none;">Click Here</a></h3>
+        </div>
+        <div class="banner-box banner-box3">
+            <h2>Desserts</h2>
+            <h3><a href="Orders.html#deserts" style="color: #fff; text-decoration: none;">Click Here</a></h3>
+        </div>
+    </section>
+    <footer class="section-p1">
+        <div class="column">
+            <img class="logo" src="/images/logo1.png" class="" alt="" width="200px">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 140 Street, Bandra Chapel,Mumbai,India</p>
+            <p><strong>Phone:</strong> +91 0x0x0x2353</p>
+            <p><strong>Hours:</strong>9:00-20:00,Mon-Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="About.html">About us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms and Conditions</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="Login1.html">Sign In</a>
+            <a href="Cart.html">View Cart</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="images/app.jpg" alt="">
+                <img src="/images/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="/images/pay.png" alt=""><img src="/images/upi-icon.png" alt="" width="70px">
+
+        </div>
+        <div class="copyright">
+            <p>©<span id="current-year"></span>, CraveCrafters Limited</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Fetch the user's profile picture path from the server
+    fetch('/profile')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const profileImg = document.getElementById('profile-button').querySelector('img');
+                profileImg.src = data.data.profilePicture; // Update the profile picture
+            } else {
+                // Handle errors, e.g., user not logged in or server error
+                console.error('Error fetching profile data:', data.message);
+                // You might want to set a default image here
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching profile data:', error);
+            // Handle potential network errors or server issues
+        });
+});
+document.addEventListener('DOMContentLoaded', () => {
+    // ... (other existing code) ...
+
+    // Logout link handling
+    const logoutLink = document.getElementById('logout-link');
+    logoutLink.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default link behavior
+
+        // Confirmation prompt
+        if (confirm('Are you sure you want to log out?')) {
+            // User confirmed logout
+            fetch('/logout')
+                .then(() => {
+                    window.location.href = '/Login1.html'; // Redirect to the login page
+                })
+                .catch(error => {
+                    console.error('Error logging out:', error);
+                    alert('An error occurred during logout. Please try again.');
+                });
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', () => {
+        new ChatWidget();
+    });
+    </script>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

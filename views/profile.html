@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/logo.png" image/x-icon">
+    <title>CraveCrafters - Profile</title>
+    <link rel="stylesheet" href="/css/profile.css">
+    <style>
+        /* Include the improved CSS styles here */
+        .profile-picture-container {
+            position: relative;
+            width: 150px; /* Set a fixed width for the profile picture */
+            height: 150px; /* Set a fixed height for the profile picture */
+            overflow: hidden; /* Ensure that the image does not overflow the container */
+        }
+
+        .profile-picture {
+            width: 100%; /* Make the image fill the container */
+            height: 100%; /* Ensure the height matches the container */
+            border-radius: 50%; /* Create a circular image */
+            object-fit: cover; /* Ensure the image covers the area without distortion */
+        }
+
+        .edit-overlay {
+            display: none; /* Initially hide the overlay */
+            position: absolute; /* Position overlay absolutely */
+            top: 0; /* Align overlay to the top */
+            left: 0; /* Align overlay to the left */
+            right: 0; /* Align overlay to the right */
+            bottom: 0; /* Align overlay to the bottom */
+            background: rgba(0, 0, 0, 0.7); /* Dark background with some transparency */
+            color: white; /* White text color */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: display 0.3s; /* Smooth transition */
+        }
+
+        .profile-picture-container:hover .edit-overlay {
+            display: flex; /* Show overlay on hover */
+        }
+    </style>
+</head>
+<body style="background-image: url(/images/backpic.jpg);">
+    <section id="pic">
+        <header id="header"> 
+            <a href="#"><img src="/images/logo1.png" class="logo" alt="" width="150"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Login1.html">Login</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                    <a href="Cart.html" id="close"><i class="fa-solid fa-xmark" style="color: #cb202d;"></i></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html" style="color: #1a1a1a;"><i class="fa-solid fa-bag-shopping"></i></a>
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </header>
+
+        <main>
+            <section class="section-p1">
+                <!-- Profile Picture -->
+                 <center>
+                    <div class="profile-picture-container">
+                        <img src="/images/profile.jpg" alt="Profile Picture" class="profile-picture" id="profile-img">
+                        <div class="edit-overlay" id="edit-overlay">
+                            Edit
+                        </div>
+                        <input type="file" id="file-input" accept="image/*" style="display: none;">
+                    </div>
+                 </center>
+                
+
+                <h2>Your Profile</h2>
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+                        <span id="phone-error" style="color: red; display: none;">Please enter a valid 10-digit phone number.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-address">Address 2:</label> <!-- Renamed to Address 2 -->
+                        <textarea id="new-address" name="new-address" placeholder="Enter additional address. If you have entered two addresses, the new address will replace your second address."></textarea>
+                    </div>
+                    <button type="submit">Save Changes</button>
+                </form>
+            </section>
+        </main>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fetch the logged-in user's profile data
+            fetch('/profile')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('name').value = data.data.name;
+                        document.getElementById('email').value = data.data.email;
+                        document.getElementById('phone').value = data.data.phone || '';
+                        document.getElementById('address').value = data.data.address || '';
+                        document.getElementById('new-address').value = data.data.newAddress || '';
+                        document.getElementById('profile-img').src = data.data.profilePicture || 'default-profile.jpg'; // Set a default image if not found
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching profile data:", error);
+                });
+    
+            // Handle form submission with phone validation
+            document.getElementById('profile-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+    
+                const phone = document.getElementById('phone').value;
+                const phoneError = document.getElementById('phone-error');
+                const address = document.getElementById('address').value;
+                const newAddress = document.getElementById('new-address').value;
+    
+                // Validate phone number (must be 10 digits)
+                const phoneRegex = /^[0-9]{10}$/;
+                if (!phoneRegex.test(phone)) {
+                    phoneError.style.display = 'block';
+                    return;
+                } else {
+                    phoneError.style.display = 'none';
+                }
+    
+                // Send updated data to the server
+                fetch('/update-profile', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ phone, address, newAddress })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Profile updated successfully!');
+                    } else {
+                        alert('Failed to update profile: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error updating profile:', error);
+                });
+            });
+            // In your profile.html, update the image error handling
+            document.getElementById('profile-img').onerror = function() {
+                this.src = '/images/profile.jpg';  // Fallback to default image if error loading
+            };
+            // Handle file input click when edit overlay is clicked
+            document.querySelector('.edit-overlay').addEventListener('click', () => {
+                document.getElementById('file-input').click();
+            });
+    
+            // Handle file input change event to update profile picture
+            document.getElementById('file-input').addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                if (file) {
+                    const formData = new FormData();
+                    formData.append('profilePicture', file);
+    
+                    fetch('/upload-profile-picture', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            document.getElementById('profile-img').src = data.imageUrl; // Update the profile picture with the new image
+                        } else {
+                            alert('Failed to update profile picture: ' + data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error uploading profile picture:', error);
+                        alert('Error uploading profile picture');
+                    });
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

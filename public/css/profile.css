@@ -1,0 +1,211 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body and Main Settings */
+body {
+    
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center; 
+    
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+#header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background-color:rgba(226, 215, 215, 0.668);
+    
+    color: #e9e4d5;
+    padding: 1rem;
+    filter: brightness(1.8) ;
+    z-index: 999;
+    position: static;
+    top:0;
+    left: 0;
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}#navbar li a{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 800;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+#navbar li a:hover,
+#navbar li a.active{
+    color: #cb202d;
+}
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: #cb202d;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+.one{
+    color: #cb202d;
+}
+#mobile{
+  display: none;
+  align-items: center;
+}
+#close{
+  display: none;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+/* Form Container */
+.section-p1 {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    text-align: center;
+}
+
+/* Profile Picture Styles */
+.profile-picture-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image is properly resized */
+    border: 4px solid #cb202d; /* Optional: Adds a border around the profile picture */
+}
+
+/* Form Styles */
+.section-p1 h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #cb202d;
+    font-weight: 600;
+}
+
+#profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #555;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    border-color: #cb202d;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #cb202d;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a11824;
+}
+
+/* Special Button Styles */
+#verify-phone, #add-address {
+    background-color: #fff;
+    color: #cb202d;
+    border: 2px solid #cb202d;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#verify-phone:hover, #add-address:hover {
+    background-color: #cb202d;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-p1 {
+        padding: 20px;
+        margin: 10px;
+        max-width: 100%;
+    }
+
+    button, input[type="text"], input[type="email"], input[type="tel"], textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+}

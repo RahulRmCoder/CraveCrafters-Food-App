@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraveCrafters - Sign Up</title>
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/Signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <section id="pic">
+        <section id="header">
+            <a href="#"><img src="/images/logo1.png" class="logo" alt="" width="150"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a class="active" href="Signup1.html">Sign Up</a></li>
+                    <li><a href="About1.html">About</a></li>
+                    <li><a href="contact1.html">Contact</a></li>
+                </ul>
+            </div>
+        </section>
+        <section id="hero">
+            <div class="login-container">
+                <h2>Create Your Account</h2>
+                <div id="message" class="message"></div>
+                <form class="login-form" method="POST" action="/signup" name="form" onsubmit="return validated(event)">
+                    <br>
+                    <h3>Username <span style="color: #D04848;">*</span></h3>
+                    <input type="text" placeholder="Enter your name" name="name" required>
+                    <div id="name-error">Please enter your name</div>
+                    
+                    <h3>Email ID <span style="color: #D04848;">*</span></h3>
+                    <input type="text" placeholder="e.g. abc@gmail.com" name="email" required>
+                    <div id="email-error">Please fill up your Email or Phone</div>
+                    
+                    <h3>Date of Birth</h3>
+                    <input type="date" name="dob">
+                    <div id="dob-error">Please select your date of birth</div>
+                    
+                    <h3>Mention your address <span style="color: #D04848;">*</span></h3>
+                    <input type="text" placeholder="Full Address" name="address" required>
+                    <div id="address-error" style="display: none;">Please enter your full address.</div>
+                    
+                    <h3>Password <span style="color: #D04848;">*</span></h3>
+                    <input type="password" placeholder="It should have numbers and special characters" name="password" required>
+                    <div id="pass-error">Please enter a valid and strong password</div>
+
+                    <h3>Food Preferences <span style="color: #D04848;">*</span></h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="preferences" value="vegetarian"> Vegetarian</label>
+                        <label><input type="checkbox" name="preferences" value="spicy"> Spicy</label>
+                        <label><input type="checkbox" name="preferences" value="non-veg"> Non-Vegetarian</label>
+                    </div>
+                    <div id="food-preferences-error" style="display: none;">Please select at least one food preference.</div>
+                    
+                    <a href="Login1.html" style="text-decoration: none; color: #D04848;">Already have an account?</a><br>
+                    <br>
+                    
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </section>
+    </section>
+    <script src="/js/signup.js"></script>
+</body>
+</html>

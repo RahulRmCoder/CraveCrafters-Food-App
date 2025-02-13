@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/images/logo.png" image/x-icon">
+  <title>Order Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(9, 5, 5, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .order-summary {
+      margin-top: 30px;
+    }
+
+    .order-summary h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .order-details {
+      border: 1px solid #4b4b4b;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .order-details table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .order-details th,
+    .order-details td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #070707;
+      border-left:1px solid #070707;
+      border-right:1px solid #070707;
+      border-top:1px solid #070707;
+    }
+
+    .order-details th {
+      background-color: #e07878;
+    }
+
+    .total {
+      padding-top: 10px;
+      font-weight: bold;
+      color: #cb202d;
+    }
+
+    .button {
+      display: block;
+      margin: 20px auto;
+      background-color: #cb202d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background-color: #F3B95F;
+    }
+  </style>
+</head>
+<body style="background-image: url(/images/bill\ \(2\).jpg); background-size: cover; background-repeat: no-repeat;">
+  <div class="container">
+    <center><img src="/images/logo1.png" alt="CraveCrafters logo" height="140px" width="140px"></center>
+    <h1>Order Confirmed!</h1>
+    <p>Thank you for your purchase.</p>
+
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <div class="order-details">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="orderItems">
+          </tbody>
+        </table>
+        <div class="total">Total: <span id="orderTotal">₹0</span></div>
+      </div>
+
+      <div class="order-details">
+        <h2>Order Details</h2>
+        <p><strong>User ID:</strong> <span id="userId"></span></p>
+        <p><strong>Name:</strong> <span id="userName"></span></p>
+        <p><strong>Delivery Address:</strong> <span id="userAddress"></span></p>
+        <p><strong>Estimated Delivery Time:</strong> <span id="deliveryTime"></span> minutes</p>
+      </div>
+    </div>
+
+    <a href="Home.html" class="button">Go to Home Page</a>
+  </div>
+
+  <script>
+    // Function to generate a random delivery time between 20 and 50 minutes
+    function getRandomDeliveryTime() {
+      return Math.floor(Math.random() * (50 - 20 + 1)) + 20;
+    }
+
+    // Fetch order details from localStorage or server
+    const orderId = new URLSearchParams(window.location.search).get('orderId');
+    
+    fetch(`/order/${orderId}`) // Adjust the route if needed
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error fetching order details');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Populate order details
+        const orderItems = data.items;
+        const totalAmount = data.totalAmount;
+        const userId = data.userId;
+        const userName = data.userName; // Assuming you have user name in the response
+        const userAddress = data.address;
+
+        // Display order items
+        const orderItemsTableBody = document.getElementById('orderItems');
+        orderItems.forEach(item => {
+          const row = orderItemsTableBody.insertRow();
+          const itemNameCell = row.insertCell();
+          const itemPriceCell = row.insertCell();
+          const itemQuantityCell = row.insertCell();
+          const itemSubtotalCell = row.insertCell();
+
+          itemNameCell.textContent = item.name;
+          itemPriceCell.textContent = `₹${item.price}`;
+          itemQuantityCell.textContent = item.quantity;
+          itemSubtotalCell.textContent = `₹${(item.price * item.quantity).toFixed(2)}`; // Format subtotal to 2 decimal places
+        });
+
+        // Display total amount
+        document.getElementById('orderTotal').textContent = `₹${totalAmount.toFixed(2)}`;
+
+        // Display user details
+        document.getElementById('userId').textContent = userId;
+        document.getElementById('userName').textContent = userName;
+        document.getElementById('userAddress').textContent = userAddress;
+
+        // Display random delivery time
+        document.getElementById('deliveryTime').textContent = getRandomDeliveryTime();
+      })
+      .catch(error => {
+        console.error('Error fetching order details:', error);
+        // Display an error message to the user
+        alert('An error occurred while fetching order details. Please try again later.');
+      });
+  </script>
+</body>
+</html>

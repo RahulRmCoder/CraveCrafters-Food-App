@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/logo.png" image/x-icon">
+  <title>My Orders</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #000;
+      margin-bottom: 30px;
+    }
+    p{
+        color: #000;
+        font-size: 25px;
+    }
+
+
+    .order-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .order-details {
+      flex-grow: 1;
+    }
+
+    .order-details h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .order-details ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .order-details li {
+      margin-bottom: 5px;
+    }
+
+    .order-status {
+      background-color: #e0e0e0;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .order-id {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .order-total {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #cb202d;
+    }
+  </style>
+</head>
+<body style="background-color: #9b734a;">
+  <div class="container">
+    <h1>My Orders</h1>
+    <div id="orderHistory">
+      </div>
+  </div>
+
+  <script>
+    // Fetch user orders from the server
+    fetch('/orders')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error fetching orders');
+        }
+        return response.json();
+      })
+      .then(data => {
+        const orderHistoryContainer = document.getElementById('orderHistory');
+
+        if (data.orders.length === 0) {
+          orderHistoryContainer.innerHTML = '<p>No order history found.</p>';
+          return;
+        }
+
+        data.orders.forEach(order => {
+          const orderCard = document.createElement('div');
+          orderCard.classList.add('order-card');
+
+          const orderDetails = document.createElement('div');
+          orderDetails.classList.add('order-details');
+
+          orderDetails.innerHTML = `
+            <h3>Order ID: <span class="order-id">${order._id}</span></h3>
+            <ul>
+              <li><strong>Total:</strong> <span class="order-total">₹${order.totalAmount.toFixed(2)}</span></li>
+            </ul>
+            <ul class="order-items">
+              ${order.items.map(item => `<li>${item.name} (Qty: ${item.quantity})</li>`).join('')}
+            </ul>
+          `;
+
+          orderCard.appendChild(orderDetails);
+          orderHistoryContainer.appendChild(orderCard);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching orders:', error);
+        orderHistoryContainer.innerHTML = '<p>An error occurred while fetching your orders. Please try again later.</p>';
+      });
+  </script>
+</body>
+</html>
