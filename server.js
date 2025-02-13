@@ -169,7 +169,7 @@ const sendWelcomeEmail = async (email, name) => {
             service: 'Gmail',
             auth: {
                 user: 'cravecraftersindia@gmail.com',
-                pass: 'bxqx voto dlhq ueie'
+                pass: 'Your App Password'
             }
         });
 
@@ -284,7 +284,7 @@ app.post('/forgot-password', async (req, res) => {
             service: 'Gmail',
             auth: {
                 user: 'cravecraftersindia@gmail.com',
-                pass: 'bxqx voto dlhq ueie'
+                pass: 'Your App Password'
             }
         });
 
@@ -390,7 +390,7 @@ app.post('/contact', async (req, res) => {
             service: 'Gmail',
             auth: {
                 user: 'cravecraftersindia@gmail.com',
-                pass: 'bxqx voto dlhq ueie'
+                pass: 'Your App Password'
             }
         });
 
@@ -927,7 +927,7 @@ function getRandomDeliveryTime() {
               service: 'Gmail',
               auth: {
                   user: 'cravecraftersindia@gmail.com',
-                  pass: 'bxqx voto dlhq ueie' // Replace with your actual password
+                  pass: 'Your App Password' // Replace with your actual password
               }
           });
           
