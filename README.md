@@ -68,8 +68,8 @@ Follow these steps to set up and run the project locally:
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/RahulRmCoder/CraveCrafters-Food-App.git
+cd CraveCrafters-Food-App
 ```
 
 ### 2️⃣ Install Dependencies
@@ -102,7 +102,3 @@ We welcome contributions! Feel free to submit issues or pull requests.
 
 ## 📜 License
 This project is licensed under the MIT License.
-
----
-💡 **Enhance this `README.md` as needed to personalize it for your project!** 🚀
-
